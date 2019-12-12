@@ -1,2 +1,6 @@
-# databasesFinstagram
-project for cs uy 3083
+# finstagram-template
+Instructions to run:
+```
+pip install -r requirements
+python app.py
+```
