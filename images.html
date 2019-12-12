@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Finstagram</title>
+    </head>
+    <body>
+        <h1>Image Gallery for {{username}}!</h1>
+        <form action="/images" method="post">
+            {% for image in imageID %}
+
+                <input type="radio" name="photoID" value={{image.photoID}} required/>
+
+                photoID {{image.photoID}} posted by {{names[loop.index0]}} at time {{times[loop.index0]}}<br>
+                {{tags[loop.index0]}}
+                  <br>{{likes[loop.index0]}}
+				  <br>
+            {% endfor %}
+            <br><br>
+			{% for lik in likes %}
+				{{lik}} <br>
+			{% endfor %}
+
+			<br><br>
+            {% for com in comment %}
+
+              {{com}}<br><br>
+
+            {% endfor %}
+
+            Would you like to post a like or comment?<br>
+            <input type="radio" name="likeorcom" value='like' required/>Like<br>
+            <input type="radio" name="likeorcom" value='com' required/>Comment<br>
+            If you'd like to post a like, please enter a value from 0-5.<br>
+
+
+
+            <input type="text" name="inputVal" placeholder="Add Like Value/Comment" required/>
+
+            <input type="submit" name="post" value="post">
+
+            <br>
+			<!--
+            Would you like to add a comment or a rating? Select a post above and then enter a comment below.<br>
+
+            <input type="text" name="comment" placeholder="Comment" />
+            <br/>
+            <input type="submit" name="post comment" value="Post Comment"><br>
+			<input type="text" name="comment" placeholder="Comment" />
+            <br/>
+            <input type="submit" name="post comment" value="Post Comment"><br>
+			-->
+            Go back to home to see updated likes and comments! <br>
+
+
+
+
+
+
+        <!-- </div> -->
+        <a href="/">Go back</a>
+    </body>
+</html>

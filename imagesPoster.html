@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Finstagram</title>
+    </head>
+    <body>
+        <h1>Search Results for {{username}}!</h1>
+        <!-- <div> -->
+          <form action="/imagesPoster" method="GET">
+            Here are the posts made by the searched username {{poster}} that are visible to you:<br>
+            {% for image in imageID %}
+                photoID {{image.photoID}}<br>
+            {% endfor %}
+            <br><br><br><br>
+
+
+
+            <br>
+
+
+
+
+
+
+
+
+        <!-- </div> -->
+        <a href="/">Go back</a>
+    </body>
+</html>

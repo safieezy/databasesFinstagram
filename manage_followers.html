@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>Finstagram</title>
+	</head>
+	<body>
+	<h1>Managing Followers for {{ username }}:</h1>
+	<form action="/manage_followers" method = "POST">
+		{% for follow_request in active_follow_reqs %}
+			<input type="radio" name="user" value="{{follow_request.username_follower}}">
+			User {{follow_request.username_follower}} requested to follow you<br>
+		{% endfor %}
+	{% if follow_request %}
+		<input type="radio" name="follow" value="1"> Accept Follow</br>
+		<input type="radio" name="follow" value="0"> Deny Follow</br>
+		<br><br>
+
+		Select the user, and select accept or deny. <br>
+		Click below to accept or deny the request. <br>
+		Do not accept/deny more than one account at a time. <br><br>
+		<form action="/manage_followers" method = "POST">
+		<input type="submit" name="confirm follow" value="Confirm">
+	{% else %}
+		You have no follow requests.
+	{% endif %}
+
+	<br><br>
+	<a href="/">Home</a>
+	</body>

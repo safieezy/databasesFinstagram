@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Finstagram</title>
+    </head>
+    <body>
+        <h1>Hello, {{ username }}!</h1>
+        <form action="/imagesPoster" method="post">
+        <div>
+            <ul>
+
+                <li><a href="/images">View Images</a></li>
+                <li><a href="/upload">Upload an Image</a></li>
+				<li><a href="/manage_followers">Manage Your Followers</a></li>
+				<li><a href="/create_friendgroup">Create A Friendgroup</a></li>
+                <li><a href="/logout">Logout</a></li>
+                Would you like to see images from a certain user? If so, search here.
+                <input type="text" name="poster" placeholder="Poster Username" required/>
+                <br/>
+                <input type="submit" value="Search">
+            </ul>
+        </div>
+    </body>
+</html>

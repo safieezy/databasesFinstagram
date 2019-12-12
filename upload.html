@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Image Upload</title>
+    </head>
+    <body>
+        <h1>Upload an Image!</h1>
+        <div>
+            <form action="/uploadImage" method="post" enctype="multipart/form-data">
+
+                <input type="file" name="imageToUpload" accept="image/*">
+                <br/>
+                What is your caption?<br>
+                <input type="text" name="caption" placeholder="Caption" required/>
+                <br>
+                <br>
+                Would you like to show to all followers?<br>
+                <input type="radio" name="allFollower" value=1> Yes<br>
+                <input type="radio" name="allFollower" value=0> No<br>
+
+                <br>
+                <br>
+
+                Which group would you like to share the photo with?
+                <br>
+
+                <!-- <input type="radio" name="groupName" value="NULL">
+                <input type="hidden" name="groupOwnder" value="NULL">
+
+                Share with no group -->
+                <br>
+                {% for name in groups %}
+                    <input type="radio" name="groupName" value={{name.groupName}}>
+                    <input type="hidden" name="groupOwner" value={{name.owner_username}}>
+                    Group: {{name.groupName}}, owned by: {{name.owner_username}}<br/>
+                {% endfor %}
+                <br>
+                <input type="submit" value="Upload">
+
+            </form>
+        </div>
+        {% if message %}
+            {{ message }}
+        {% endif %}
+        <br/>
+        <a href="/">Go back</a>
+    </body>
+</html>

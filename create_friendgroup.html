@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Finstagram</title>
+	</head>
+	<body>
+	<h1>Create a Friendgroup Owned By {{ username }}:</h1>
+	<form action="/create_friendgroup" method = "POST">
+	<input type="text" name="friendgroup name" placeholder="Enter Friendgroup Name" required/>
+	<br>
+	<input type="text" name="friendgroup desc" placeholder="Enter description">
+	<br>
+	<input type="submit" name="create group" value="Create Group">
+	<br><br>
+        {% if error %}
+            {{ error }}
+        {% endif %}
+	<a href="/">Home</a>
+	</body>
